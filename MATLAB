@@ -1,0 +1,18 @@
+I1 = imread('C:\ESP_PHOTOS\Photo1.jpg');
+I2 = imread('C:\ESP_PHOTOS\Photo2.jpg');
+IF1 = imgaussfilt(I1,2);
+IF2 = imgaussfilt(I2,2);
+G1 = im2gray(IF1);
+G2 = im2gray(IF2);
+BW1 = G1 > 100;
+BW2 = G2 > 100;
+result = BW1 - BW2;
+subplot(1,3,1);
+imshow(I1);
+title('Reference image');
+subplot(1,3,2);
+imshow(I2);
+title('Sample image')
+subplot(1,3,3);
+imshow('result');
+title('Result Image');
